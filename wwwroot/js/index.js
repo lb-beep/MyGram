@@ -54,7 +54,11 @@ $(document).ready(function () {
             },
         },
         submitHandler: function (form) {
-            
+            var user = $("#User").val();
+            var password = $("#Password").val();
+
+            alert("The user your submitted was: " + user +
+                " and the password is: " + password);
         }
 
     });

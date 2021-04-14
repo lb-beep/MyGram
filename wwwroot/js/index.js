@@ -31,7 +31,31 @@ $("#LogIn").click(function () {
 });
 
 $("#SignUp").click(function () {
-    $("<span></span>").text("User").css("margin-right", "10px").appendTo(divContainer);
-    $("<span></span>").text("Password").css("margin-right", "10px").appendTo(divContainer);
+    $("#UserInputForm").show();
+   
+});
 
+$("#UserInputForm").hide();
+
+$(document).ready(function () {
+    $('form[name="UserInputForm"]').validate({
+        rules: {
+            User: "required",
+            Password: {
+                required: true,
+                minlength: 5,
+            }
+        },
+        messages: {
+            User: "Please enter your user name",
+            Password: {
+                required: "Please provide a password",
+                minlength: "You password must be at lease 5 characters long",
+            },
+        },
+        submitHandler: function (form) {
+            
+        }
+
+    });
 });

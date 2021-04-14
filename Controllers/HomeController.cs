@@ -27,6 +27,13 @@ namespace MyGram.Controllers
         {
             return View();
         }
+        public bool Register(string User, string Password)
+        {
+            string result = $"The user is {User} and Password is {Password}";
+
+            return true;
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -35,3 +42,4 @@ namespace MyGram.Controllers
         }
     }
 }
+

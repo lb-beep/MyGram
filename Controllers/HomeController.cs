@@ -33,6 +33,16 @@ namespace MyGram.Controllers
 
             return true;
         }
+        public JsonResult GetUser()
+        {
+
+            User user1 = new User();
+            user1.UserId = 1;
+            user1.UserName = "Luis";
+            user1.UserEmail = "luis@gmail.com";
+
+            return Json(user1);
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

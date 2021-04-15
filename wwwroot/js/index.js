@@ -58,11 +58,13 @@ $(document).ready(function () {
             var password = $("#Password").val();
 
             $.when($.ajax({
+                type: "POST",
                 url: "~/Home/Register",
-                type: "Post",
+                async: true,
+                datatype: "json",
                 data: {
-                    User: user,
-                    Password: password,
+                    User: userValue,
+                    Password: passwordValue,
                 }
 
             })).then(function (data) {
@@ -74,6 +76,23 @@ $(document).ready(function () {
         }
 
     });
-});
+    $.when($.ajax({
+        type: "GET",
+        url: "~/Home/GetUser",
+        async: true,
+        datatype: "json",
+        data: {
+            User: userValue,
+            Password: passwordValue,
+        }
 
+    })).then(function (data) {
+        var stringVar = data.userId + ", " +
+            data.userName + ", " +
+            data.userEmail;
+
+        alert(stringVar);
+
+    });
+});
 

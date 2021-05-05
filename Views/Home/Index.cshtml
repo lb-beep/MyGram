@@ -2,47 +2,67 @@
     ViewData["Title"] = "Home Page";
 }
 
-<style>
-    button {
-        margin-right: 10px;
-    }
-</style>
-<div id="MainContainer" class="text-center">
+<link rel="stylesheet" href="~/css/Index.css" />
 
-</div>
-<form id="UserInputForm" name="UserInputForm">
-    <table>
+<div id="MainContainerDiv" class="text-center">
+    <table id="MainProductTable" class="display">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
         <tbody>
-            <tr>
-                <td>
-                    <label for="User">User</label>
-                </td>
-                <td>
-                    <input type="text" id="User" name="User" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="Password">Password</label>
-
-                </td>
-                <td>
-                    <input type="password" id="Password" name="Password" />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <button>Register</button>
-                </td>
-            </tr>
-
         </tbody>
     </table>
-   
-</form>
+    <br />
+</div>
+
+<div id="RegisterDialog" title="Register user">
+    <form id="MainForm" name="registration" action="">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>User</label>
+                    </td>
+                    <td>
+                        <input type="text" id="UserInput" name="UserInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Password</label>
+                    </td>
+                    <td>
+                        <input type="password" id="PasswordInput" name="PasswordInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button id="LoginButton">Log In</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<div id="dialog" title="Add to lists">
+    <input type="checkbox" id="BuyFirstList" />
+    <label for="BuyFirstList">Add to Buy First List</label><br />
+
+    <input type="checkbox" id="BuyLastList" />
+    <label for="BuyLastList">Add to Buy Last List</label><br />
+
+    <input type="checkbox" id="ChristmasGiftsList" />
+    <label for="ChristmasList">Add to Christmas Gifts List</label><br />
+</div>
 
 @section Scripts
 {
-    <script src="~/js/index.js"></script>
-
+    <script src="~/js/Objects.js"></script>
+    <script src="~/js/Index.js"></script>
 }

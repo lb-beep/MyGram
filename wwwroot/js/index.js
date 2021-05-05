@@ -32,6 +32,16 @@ $(document).ready(function () {
             }
         }
     });
+    document.getElementById('foo').addEventListener('click' function (e) {
+        var img = document.createElement('img');
+
+        $("target").click(function () {
+            alert("Thank you!")
+
+        });
+
+    });
+
 
     $("form[name='registration']").validate({
         rules: {
